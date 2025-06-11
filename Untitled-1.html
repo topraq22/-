@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>الانضمام إلى جهاز الأمن العام</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-image: url('278790769_107383065285562_9151689901191159126_n.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      direction: rtl;
+    }
+
+    /* زر القائمة (ثلاث خطوط) */
+    .menu-toggle {
+      font-size: 30px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 1001;
+    }
+
+    /* القائمة الجانبية */
+    .sidebar {
+      width: 220px;
+      background-color: rgba(0, 33, 71, 0.95);
+      color: white;
+      height: 100%;
+      padding-top: 30px;
+      position: fixed;
+      right: -250px;
+      top: 0;
+      transition: right 0.3s ease;
+      z-index: 1000;
+    }
+
+    .sidebar.active {
+      right: 0;
+    }
+
+    .sidebar h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      transition: background 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #1a3c6c;
+    }
+
+    .main-content {
+      padding: 0;
+    }
+
+    header {
+      background-color: rgba(0, 33, 71, 0.8);
+      color: white;
+      padding: 60px 20px 20px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header img {
+      max-height: 100px;
+      height: auto;
+      width: auto;
+      display: block;
+      margin: 0 auto 15px auto;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    .container {
+      text-align: center;
+      padding: 50px 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      margin: 20px;
+      border-radius: 10px;
+    }
+
+    .container h2 {
+      color: #002147;
+      font-size: 24px;
+    }
+
+    .container p {
+      color: #333;
+      font-size: 18px;
+      margin: 20px 0;
+    }
+
+    .download-btn {
+      padding: 15px 30px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 8px;
+      display: inline-block;
+      transition: background-color 0.3s;
+    }
+
+    .download-btn:hover {
+      background-color: #45a049;
+    }
+
+    footer {
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+    }
+
+    /* للخلفية عند فتح القائمة */
+    .overlay {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      z-index: 999;
+      display: none;
+    }
+
+    .overlay.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- زر القائمة -->
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+  <!-- القائمة الجانبية -->
+  <div class="sidebar" id="sidebar">
+    <h3>القائمة</h3>
+    <a href="#">الرئيسية</a>
+    <a href="#">حول</a>
+    <a href="#">الخدمات</a>
+    <a href="#">اتصل بنا</a>
+  </div>
+
+  <!-- خلفية عند فتح القائمة -->
+  <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+  <!-- محتوى الصفحة -->
+  <div class="main-content">
+    <header>
+      <img src="شعار_وزارة_الدفاع_السورية.jpg" alt="شعار وزارة الدفاع السورية" />
+      <h2>الانضمام إلى جهاز الأمن العام</h2>
+    </header>
+
+    <div class="container">
+      <h2>كن جزءاً من مستقبل آمن!</h2>
+      <p>يسر جهاز الأمن العام استقبال طلبات الانضمام من المواطنين المؤهلين لخدمة الوطن. حمل الاستمارة وابدأ رحلتك معنا!</p>
+      <a href="أمن-الشبكات-وحمايتها.pdf" class="download-btn" download>تحميل استمارة التقديم</a>
+    </div>
+
+    <footer>
+      <h2>جميع الحقوق محفوظة &copy; 2025 وزارة الدفاع السورية</h2>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleMenu() {
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      sidebar.classList.toggle("active");
+      overlay.classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
